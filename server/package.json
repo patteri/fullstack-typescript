@@ -6,14 +6,15 @@
   "author": "Petteri Roponen",
   "license": "MIT",
   "scripts": {
+    "start": "concurrently \"tsc --watch\" \"nodemon dist\"",
     "build": "tsc",
-    "dev": "concurrently \"tsc --watch\" \"nodemon dist\"",
     "test": "tsc && mocha dist/**/*.spec.js",
     "lint": "eslint src --ext ts",
     "tsc": "tsc"
   },
   "dependencies": {
     "@types/node": "10.7.1",
+    "body-parser": "^1.18.3",
     "express": "4.16.3",
     "nodemon": "1.18.3"
   },
