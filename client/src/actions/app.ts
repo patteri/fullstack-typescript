@@ -1,4 +1,4 @@
-import { Item } from 'common-typescript';
+import { Item } from 'common';
 
 export const CHANGE_NAME = 'CHANGE_NAME';
 export type CHANGE_NAME = typeof CHANGE_NAME;

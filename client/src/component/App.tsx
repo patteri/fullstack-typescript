@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Item } from 'common-typescript';
+import { Item } from 'common';
 import logo from '../logo.svg';
 
 export interface Props {

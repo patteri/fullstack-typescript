@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import { Item, validateItem } from 'common-typescript';
+import { Item, validateItem } from 'common';
 import validateBody from './middleware/validateBody';
 
 const items: Item[] = [

@@ -1,4 +1,4 @@
-import { Item } from 'common-typescript';
+import { Item } from 'common';
 import {
   AppAction,
   CHANGE_NAME,

@@ -1,5 +1,5 @@
 {
-  "name": "common-typescript",
+  "name": "common",
   "version": "0.1.0",
   "description": "Implements common types and validations using TypeScript",
   "main": "dist/index.js",

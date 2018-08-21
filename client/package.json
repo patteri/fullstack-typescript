@@ -19,7 +19,7 @@
   "dependencies": {
     "@types/react-redux": "^6.0.6",
     "axios": "^0.18.0",
-    "common-typescript": "file:../common/",
+    "common": "file:../common/",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",

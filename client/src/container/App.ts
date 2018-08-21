@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { Item } from 'common-typescript';
+import { Item } from 'common';
 import App from '../component/App';
 import * as actions from '../actions/app';
 import * as api from '../api/api';
