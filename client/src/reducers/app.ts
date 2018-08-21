@@ -1,10 +1,10 @@
+import { Item } from 'common-typescript';
 import {
   AppAction,
   CHANGE_NAME,
   CHANGE_VALUE,
   FETCH_ITEMS,
 } from '../actions/app';
-import Item from '../types/item';
 
 export interface AppReducerState {
   name: string;

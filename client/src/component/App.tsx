@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { Item } from 'common-typescript';
 import logo from '../logo.svg';
-import Item from '../types/item';
 
 export interface Props {
   name: string;

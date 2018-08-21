@@ -1,7 +1,9 @@
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
+import { Item, validateItem } from 'common-typescript'
+import validateBody from './middleware/validateBody'
 
-const items = [
+const items: Item[] = [
   { id: '1', name: 'Name 1', value: 'Value 1' },
   { id: '2', name: 'Name 2', value: 'Value 2' },
 ];
@@ -22,8 +24,8 @@ class App {
       res.json(items)
     })
 
-    router.put('/api/items', (req, res) => {
-      items.push({ id: (items.length + 1).toString(), ...req.body });
+    router.put('/api/items', validateBody(validateItem), (req, res) => {
+      items.push({ ...req.body, id: (items.length + 1).toString() });
       
       res.json(items)
     })

@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import { Item } from 'common-typescript';
 import App from '../component/App';
 import * as actions from '../actions/app';
 import * as api from '../api/api';
 import { AppReducerState } from '../reducers/app';
-import Item from '../types/item';
 
 export function mapStateToProps({ name, value, items }: AppReducerState) {
   return {

@@ -1,8 +1,10 @@
 # Node.js and React application with TypeScript
 
-Implements a template for Node.js backend and react frontend using TypeScript.
+Implements a template of Node.js backend and React frontend using TypeScript. Has a common shared module containing types and validations.
 
 ## Running the project
 
-The project consist of separate backend and frontend projects. See instructions how to run the projects from project README's 
-([backend README](./server/README.md), [frontend README](./client/README.md))
+The project consist of three separate npm modules: client, server and common. See instructions how to build and run the projects from project README's 
+([Common README](./common/README.md), ([Backend README](./server/README.md), [Frontend README](./client/README.md))
+
+Start by building the common.

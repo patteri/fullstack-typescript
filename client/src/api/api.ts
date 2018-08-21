@@ -1,5 +1,5 @@
 import axios, { AxiosPromise } from 'axios';
-import Item from '../types/item';
+import { Item } from 'common-typescript';
 
 export const getItems = (): AxiosPromise<Item[]> => axios.get('/api/items');
 
