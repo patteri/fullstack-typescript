@@ -1,7 +1,7 @@
-import * as express from 'express'
-import * as bodyParser from 'body-parser'
-import { Item, validateItem } from 'common-typescript'
-import validateBody from './middleware/validateBody'
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import { Item, validateItem } from 'common-typescript';
+import validateBody from './middleware/validateBody';
 
 const items: Item[] = [
   { id: '1', name: 'Name 1', value: 'Value 1' },
@@ -9,29 +9,29 @@ const items: Item[] = [
 ];
 
 class App {
-  public express
+  public express;
 
   constructor () {
-    this.express = express()
+    this.express = express();
     this.express.use(bodyParser.json());
-    this.mountRoutes()
+    this.mountRoutes();
   }
 
   private mountRoutes (): void {
-    const router = express.Router()
-    
+    const router = express.Router();
+
     router.get('/api/items', (req, res) => {
-      res.json(items)
-    })
+      res.json(items);
+    });
 
     router.put('/api/items', validateBody(validateItem), (req, res) => {
       items.push({ ...req.body, id: (items.length + 1).toString() });
-      
-      res.json(items)
-    })
-    
-    this.express.use('/', router)
+
+      res.json(items);
+    });
+
+    this.express.use('/', router);
   }
 }
 
-export default new App().express
+export default new App().express;
