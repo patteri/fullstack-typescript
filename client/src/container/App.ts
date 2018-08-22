@@ -18,8 +18,8 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.AppAction>) {
   return {
     onNameChanged: (value: string) => dispatch(actions.changeName(value)),
     onValueChanged: (value: string) => dispatch(actions.changeValue(value)),
-    fetchItems: () => api.getItems().then((r) => dispatch(actions.fetchItems(r.data))),
-    addItem: (item: Item) => api.addItem(item).then((r) => dispatch(actions.fetchItems(r.data))),
+    fetchItems: () => api.getItems().then(r => dispatch(actions.fetchItems(r.data))),
+    addItem: (item: Item) => api.addItem(item).then(r => dispatch(actions.fetchItems(r.data))),
   };
 }
 

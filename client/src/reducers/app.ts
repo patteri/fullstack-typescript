@@ -19,7 +19,7 @@ const initialState: AppReducerState = {
 };
 
 const appReducer = (state: AppReducerState = initialState, action: AppAction): AppReducerState => {
-  switch(action.type) {
+  switch (action.type) {
     case CHANGE_NAME:
       return { ...state, name: action.value };
     case CHANGE_VALUE:
@@ -28,6 +28,6 @@ const appReducer = (state: AppReducerState = initialState, action: AppAction): A
       return { ...state, items: action.data };
   }
   return state;
-}
+};
 
 export default appReducer;

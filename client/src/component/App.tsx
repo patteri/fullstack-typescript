@@ -52,29 +52,33 @@ class App extends React.Component<Props, State> {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p>{time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</p>
-        <ul className="item-list">
-          {items.map(item => (
-            <li key={item.id}>{item.name}: {item.value}</li>
-          ))}
-        </ul>
-        <div>
-          <input
-            type="text"
-            value={name}
-            placeholder="Name"
-            onChange={(e) => onNameChanged(e.target.value)}
-          />
+        <div className="container">
+          <p>{time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</p>
+          <ul className="list-unstyled">
+            {items.map(item => (
+              <li key={item.id}>{item.name}: {item.value}</li>
+            ))}
+          </ul>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              value={name}
+              placeholder="Name"
+              onChange={e => onNameChanged(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              value={value}
+              placeholder="Value"
+              onChange={e => onValueChanged(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary" onClick={this.addItem}>Add</button>
         </div>
-        <div>
-          <input
-            type="text"
-            value={value}
-            placeholder="Value"
-            onChange={(e) => onValueChanged(e.target.value)}
-          />
-        </div>
-        <button onClick={this.addItem}>Add</button>
       </div>
     );
   }
