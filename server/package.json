@@ -6,7 +6,7 @@
   "author": "Petteri Roponen",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"tsc --watch\" \"nodemon dist\"",
+    "start": "tsc && concurrently \"tsc --watch\" \"nodemon dist\"",
     "build": "tsc",
     "test": "tsc && mocha dist/**/*.spec.js",
     "lint": "tslint --project tsconfig.json"

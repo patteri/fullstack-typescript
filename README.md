@@ -4,7 +4,18 @@ Implements a template of Node.js backend and React frontend using TypeScript. Ha
 
 ## Running the project
 
-The project consist of three separate npm modules: client, server and common. See instructions how to build and run the projects from project README's 
-([Common README](./common/README.md), ([Backend README](./server/README.md), [Frontend README](./client/README.md))
+### Server
 
-Start by building the common.
+```
+cd server
+npm install
+npm start
+```
+
+### Client
+
+```
+cd client
+npm install
+npm start
+```

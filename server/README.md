@@ -5,5 +5,6 @@ Implements a template for Node.js / Express backend using TypeScript.
 ## Running the project
 
 ```
-npm run dev
+npm install
+npm start
 ```

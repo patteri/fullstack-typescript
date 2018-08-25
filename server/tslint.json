@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier", "tslint-config-airbnb"],
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-config-airbnb"],
   "linterOptions": {
     "exclude": [
       "node_modules/**/*.ts"
@@ -26,6 +26,7 @@
         "esSpecCompliant": true
       }
     ],
-    "variable-name": [true, "check-format", "allow-pascal-case"]
+    "variable-name": [true, "check-format", "allow-pascal-case"],
+    "no-unused-variable": false
   }
 }
