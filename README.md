@@ -12,6 +12,8 @@ npm install
 npm start
 ```
 
+Node.js server is started and runs on `localhost:3001`.
+
 ### Client
 
 ```
@@ -19,3 +21,16 @@ cd client
 npm install
 npm start
 ```
+
+Webpack development server is started and runs on `localhost:3000`.
+
+## Production build
+
+```
+cd client
+npm run build
+cd ../server
+npm run start:prod
+```
+
+Node.js server is started and runs on `localhost:3001`.

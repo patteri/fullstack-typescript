@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as path from 'path';
 import { Item, validateItem } from 'common';
 import validateBody from './middleware/validateBody';
 
@@ -15,9 +16,10 @@ class App {
     this.express = express();
     this.express.use(bodyParser.json());
     this.mountRoutes();
+    this.serveStatic();
   }
 
-  private mountRoutes (): void {
+  private mountRoutes(): void {
     const router = express.Router();
 
     router.get('/api/items', (req, res) => {
@@ -31,6 +33,17 @@ class App {
     });
 
     this.express.use('/', router);
+  }
+
+  private serveStatic(): void {
+    // Express serves static assets only in production
+    if (process.env.NODE_ENV === 'production') {
+      const pathName = path.join(__dirname, '../../client/build');
+      this.express.use(express.static(pathName));
+      this.express.get('*', (req, res) => {
+        res.sendFile(`${pathName}/index.html`);
+      });
+    }
   }
 }
 
