@@ -33,4 +33,10 @@ cd ../server
 npm run start:prod
 ```
 
+### Using Docker
+
+```
+docker-compose up
+```
+
 Node.js server is started and runs on `localhost:3001`.

@@ -9,22 +9,18 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "test": "build && mocha dist/**/*.spec.js",
     "lint": "tslint --project tsconfig.json"
   },
   "dependencies": {
-    "yup": "^0.26.2"
+    "@types/mocha": "5.2.5",
+    "yup": "^0.26.2",
+    "typescript": "3.0.1"
   },
   "devDependencies": {
-    "@types/mocha": "5.2.5",
-    "concurrently": "^3.6.1",
-    "mocha": "5.2.0",
-    "supertest": "3.1.0",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.10.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
-    "typescript": "3.0.1",
     "typescript-eslint-parser": "18.0.0"
   }
 }
