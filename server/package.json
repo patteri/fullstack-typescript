@@ -6,7 +6,7 @@
   "author": "Petteri Roponen",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && concurrently \"tsc --watch\" \"nodemon dist\"",
+    "start": "tsc && concurrently \"tsc --watch\" \"nodemon --delay 2.0 dist\"",
     "start:prod": "set NODE_ENV=production&& node dist",
     "build": "tsc",
     "test": "tsc && mocha dist/**/*.spec.js",
