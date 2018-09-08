@@ -4,12 +4,18 @@ Implements a template of Node.js backend and React frontend using TypeScript. Ha
 
 ## Running the project
 
+Required software:
+
+- Node.js
+- Yarn
+- Optional: Docker
+
 ### Server
 
 ```
 cd server
-npm install
-npm start
+yarn
+yarn start
 ```
 
 Node.js server is started and runs on `localhost:3001`.
@@ -18,8 +24,8 @@ Node.js server is started and runs on `localhost:3001`.
 
 ```
 cd client
-npm install
-npm start
+yarn
+yarn start
 ```
 
 Webpack development server is started and runs on `localhost:3000`.
@@ -28,9 +34,9 @@ Webpack development server is started and runs on `localhost:3000`.
 
 ```
 cd client
-npm run build
+yarn build
 cd ../server
-npm run start:prod
+yarn start:prod
 ```
 
 ### Using Docker

@@ -12,9 +12,8 @@
     "lint": "tslint --project tsconfig.json"
   },
   "dependencies": {
-    "@types/mocha": "5.2.5",
-    "yup": "^0.26.2",
-    "typescript": "3.0.1"
+    "typescript": "3.0.1",
+    "yup": "^0.26.2"
   },
   "devDependencies": {
     "tslint": "^5.11.0",

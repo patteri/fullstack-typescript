@@ -7,14 +7,16 @@ COPY . /usr/src/app
 
 # Install app dependencies
 WORKDIR /usr/src/app/server
-RUN cd ../common && \
-    npm install --production && \
-    npm run build && \
+RUN npm install -g yarn && \
+    cd ../common && \
+    yarn --production && \
+    yarn build && \
     cd ../client && \
-    npm install && \
-    npm run build && \
+    yarn && \
+    yarn build && \
     cd ../server && \
-    npm install --production
+    yarn --production && \
+    yarn build
 
 ENV PORT 3001
 ENV NODE_ENV production
