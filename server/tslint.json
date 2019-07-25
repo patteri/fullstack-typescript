@@ -1,9 +1,7 @@
 {
   "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-config-airbnb"],
   "linterOptions": {
-    "exclude": [
-      "node_modules/**/*.ts"
-    ]
+    "exclude": ["node_modules/**/*.ts"]
   },
   "rules": {
     "array-type": [true, "array"],
@@ -13,6 +11,7 @@
     "no-trailing-whitespace": true,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
+    "ter-arrow-parens": [true, "as-needed"],
     "trailing-comma": [
       true,
       {

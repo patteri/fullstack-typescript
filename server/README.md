@@ -5,6 +5,6 @@ Implements a template for Node.js / Express backend using TypeScript.
 ## Running the project
 
 ```
-npm install
-npm start
+yarn
+yarn start
 ```
