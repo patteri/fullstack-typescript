@@ -3,3 +3,4 @@
 /client/build
 **/*.test.ts
 **/*.test.tsx
+**/*.spec.ts

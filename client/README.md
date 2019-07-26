@@ -5,6 +5,12 @@ Implements a template for React frontend using TypeScript.
 ## Running the project
 
 ```
-npm install
-npm start
+yarn
+yarn start
 ```
+
+## Other scripts
+
+`'yarn build'` makes a production build
+
+`'yarn test'` runs tests and shows results
