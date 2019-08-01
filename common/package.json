@@ -12,14 +12,14 @@
     "lint": "tslint --project tsconfig.json"
   },
   "dependencies": {
-    "typescript": "3.0.1",
-    "yup": "^0.26.2"
+    "typescript": "3.5.3",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.10.0",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^3.6.0",
-    "typescript-eslint-parser": "18.0.0"
+    "tslint-react": "^4.0.0",
+    "typescript-eslint-parser": "22.0.0"
   }
 }
