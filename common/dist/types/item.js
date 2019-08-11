@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const yup = require("yup");
 const schema = yup.object().shape({
-    id: yup.string(),
+    id: yup.number(),
     name: yup.string().required(),
     value: yup.string().required(),
 });

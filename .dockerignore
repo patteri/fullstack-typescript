@@ -1,6 +1,8 @@
 */node_modules
 */dist
 /client/build
+/server/dist
+/server/src/utils/test
 **/*.test.ts
 **/*.test.tsx
 **/*.spec.ts

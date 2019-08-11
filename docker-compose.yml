@@ -1,6 +1,26 @@
-version: '3.1'
+version: "3.5"
+
 services:
   fullstack-typescipt:
     build: .
     ports:
       - 3001:3001
+    environment:
+      DB_CONNECTION: postgres://postgres:password@postgres:5432/fullstack_ts
+    depends_on:
+      - postgres
+    command: dockerize -wait tcp://postgres:5432 sh -c "yarn migrate && yarn start:prod"
+
+  postgres:
+    image: postgres:10.5
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: fullstack_ts
+    volumes:
+      - fullstack_ts_postgres:/var/lib/postgresql/data
+
+volumes:
+  fullstack_ts_postgres:
+    driver: local

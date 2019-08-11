@@ -15,5 +15,5 @@ export const fetchItemsWorker = asyncWorker(fetchItems, () => getItems());
 export const createItem = actionCreator.async<Item, Item, any>('CREATE_ITEMS');
 export const createItemWorker = asyncWorker(createItem, (item: Item) => addItem(item));
 
-export const removeItem = actionCreator.async<string, Item, any>('REMOVE_ITEM');
-export const removeItemWorker = asyncWorker(removeItem, (id: string) => deleteItem(id));
+export const removeItem = actionCreator.async<number, Item, any>('REMOVE_ITEM');
+export const removeItemWorker = asyncWorker(removeItem, (id: number) => deleteItem(id));

@@ -1,6 +1,9 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as path from 'path';
+import * as Knex from 'knex';
+import config from './config';
+import { initDb } from './db-utils/db';
 import registerRoutes from './routes';
 
 class App {
@@ -9,11 +12,12 @@ class App {
 
   constructor() {
     this.express = express();
-    this.router = express.Router();
-
+    this.router = require('express-promise-router')();
     this.express.use(bodyParser.json()).use(this.router);
 
     registerRoutes(this.router);
+    initDb(config.knex);
+
     this.serveStatic();
   }
 

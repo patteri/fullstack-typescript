@@ -15,7 +15,7 @@ interface DispatchProps {
   changeValue(value: string): void;
   fetchItems(): Promise<Item[]>;
   createItem(item: Item): Promise<Item>;
-  removeItem(id: string): Promise<Item>;
+  removeItem(id: number): Promise<Item>;
 }
 
 interface State {

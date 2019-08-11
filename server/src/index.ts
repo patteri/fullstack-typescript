@@ -1,7 +1,7 @@
-require('dotenv').config();
+import config from './config';
 import app from './app';
 
-const port = process.env.PORT || 3001;
+const { port } = config;
 
 app.listen(port, err => {
   if (err) {

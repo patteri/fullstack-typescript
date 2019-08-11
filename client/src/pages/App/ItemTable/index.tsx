@@ -30,7 +30,7 @@ const ItemTable: React.FC<Props> = ({ isLoading, items, removeItem }) => (
             </td>
           </tr>
         ))}
-        {items.length === 0 && (
+        {!isLoading && items.length === 0 && (
           <tr>
             <td colSpan={3}>
               <span>No items</span>

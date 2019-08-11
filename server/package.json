@@ -9,8 +9,10 @@
     "start": "tsc && concurrently \"tsc --watch\" \"nodemon --delay 2.0 dist\"",
     "start:prod": "set NODE_ENV=production&& node dist",
     "build": "tsc",
-    "test": "tsc && mocha dist/**/*.spec.js",
-    "lint": "tslint --project tsconfig.json"
+    "test": "tsc && cross-env NODE_ENV=test mocha dist/**/*.spec.js",
+    "lint": "tslint --project tsconfig.json",
+    "migrate": "node -e 'require(\"./dist/db-utils/migrate\").migrate()'",
+    "seed": "node -e 'require(\"./dist/db-utils/seed\").seed()'"
   },
   "dependencies": {
     "@types/node": "12.6.8",
@@ -18,7 +20,10 @@
     "common": "file:../common",
     "dotenv": "^8.0.0",
     "express": "4.17.1",
+    "express-promise-router": "^3.0.3",
+    "knex": "^0.19.1",
     "path": "^0.12.7",
+    "pg": "^7.12.0",
     "typescript": "3.5.3"
   },
   "devDependencies": {
@@ -28,8 +33,12 @@
     "@types/supertest": "^2.0.8",
     "chai": "^4.2.0",
     "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
+    "knex-db-manager": "^0.5.0",
     "mocha": "6.2.0",
     "nodemon": "1.19.1",
+    "pg-connection-string": "^2.1.0",
+    "pg-escape": "^0.2.0",
     "supertest": "4.0.2",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",

@@ -1,27 +1,33 @@
 import { RequestHandler } from 'express';
-import { Item } from 'common';
-import { find, remove } from 'lodash';
-
-const items: Item[] = [{ id: '1', name: 'Name 1', value: 'Value 1' }, { id: '2', name: 'Name 2', value: 'Value 2' }];
+import db from '../../db-utils/db';
 
 export const listItems: RequestHandler = async (req, res) => {
-  res.json(items);
+  res.json(
+    await db()
+      .table('item')
+      .select()
+  );
 };
 
 export const addItem: RequestHandler = async (req, res) => {
-  const newItem = { ...req.body, id: (items.length + 1).toString() };
-  items.push(newItem);
-
-  res.json(newItem);
+  const result = await db()
+    .table('item')
+    .insert(req.body)
+    .returning('*');
+  res.json(result[0]);
 };
 
 export const removeItem: RequestHandler = async (req, res) => {
   const { id } = req.params;
-  const item = find(items, { id });
-  if (!item) {
+
+  const result = await db()
+    .table('item')
+    .delete()
+    .where({ id })
+    .returning('*');
+
+  if (result.length === 0) {
     return res.status(404).send();
   }
-  remove(items, cur => cur.id === id);
-
-  res.json(item);
+  res.json(result[0]);
 };
