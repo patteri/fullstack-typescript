@@ -11,3 +11,5 @@ export const migrate = () => {
       process.exit(1);
     });
 };
+
+migrate();

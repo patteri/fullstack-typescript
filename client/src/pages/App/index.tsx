@@ -90,6 +90,7 @@ class App extends React.Component<Props, State> {
               <input
                 className="form-control"
                 type="text"
+                name="name"
                 value={name}
                 placeholder="Name"
                 onChange={e => changeName(e.target.value)}
@@ -99,6 +100,7 @@ class App extends React.Component<Props, State> {
               <input
                 className="form-control"
                 type="text"
+                name="value"
                 value={value}
                 placeholder="Value"
                 onChange={e => changeValue(e.target.value)}

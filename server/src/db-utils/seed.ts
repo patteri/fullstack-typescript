@@ -26,3 +26,5 @@ export const seed = async () => {
       process.exit(1);
     });
 };
+
+seed();

@@ -11,8 +11,9 @@
     "build": "tsc",
     "test": "tsc && cross-env NODE_ENV=test mocha dist/**/*.spec.js",
     "lint": "tslint --project tsconfig.json",
-    "migrate": "node -e 'require(\"./dist/db-utils/migrate\").migrate()'",
-    "seed": "node -e 'require(\"./dist/db-utils/seed\").seed()'"
+    "migrate": "node ./dist/db-utils/migrate.js",
+    "seed": "node ./dist/db-utils/seed.js",
+    "truncate": "node ./dist/db-utils/truncate.js"
   },
   "dependencies": {
     "@types/node": "12.6.8",
