@@ -2,7 +2,8 @@ import React, { FormEvent } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import padStart from 'lodash/padStart';
-import { Item } from 'common';
+import { Formik, Form, Field } from 'formik';
+import { Item, itemSchema } from 'common';
 import ItemTable from './ItemTable';
 import * as actions from './actions';
 import { AppReducerState } from './reducer';
@@ -58,6 +59,10 @@ class App extends React.Component<Props, State> {
     event.preventDefault();
   };
 
+  private addItem = (item: Item) => {
+    this.props.createItem(item);
+  };
+
   private removeItem = (item: Item) => {
     this.props.removeItem(item.id!);
   };
@@ -83,8 +88,11 @@ class App extends React.Component<Props, State> {
           <p>
             <strong>Current time:</strong> {this.formatClock(time)}
           </p>
+
           <ItemTable isLoading={isLoading} items={items} removeItem={this.removeItem} />
-          <form onSubmit={this.handleAddItem}>
+
+          <form id="classic-form" onSubmit={this.handleAddItem}>
+            <p>Example of a "classic" React form</p>
             <label>Add new item</label>
             <div className="form-group">
               <input
@@ -110,6 +118,33 @@ class App extends React.Component<Props, State> {
               Add
             </button>
           </form>
+
+          <Formik<Item>
+            initialValues={{
+              name: '',
+              value: '',
+            }}
+            validationSchema={itemSchema}
+            onSubmit={this.addItem}
+          >
+            {({ errors, touched }) => (
+              <Form id="formik-form">
+                <p>Example of a form utilizing formik and yup validations</p>
+                <label>Add new item</label>
+                <div className="form-group">
+                  <Field className="form-control" name="name" placeholder="Name" />
+                  {touched.name && errors.name && <span className="error">{errors.name}</span>}
+                </div>
+                <div className="form-group">
+                  <Field className="form-control" name="value" placeholder="Value" />
+                  {touched.value && errors.value && <span className="error">{errors.value}</span>}
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Add
+                </button>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     );

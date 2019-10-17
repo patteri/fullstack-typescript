@@ -6,10 +6,10 @@ interface Item {
   value: string;
 }
 
-const schema = yup.object().shape({
+export const schema = yup.object().shape({
   id: yup.number(),
-  name: yup.string().required(),
-  value: yup.string().required(),
+  name: yup.string().required('Required'),
+  value: yup.string().required('Required'),
 });
 
 export const validateItem = (obj: any): Promise<Item> => schema.validate(obj);
